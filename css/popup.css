@@ -1,0 +1,105 @@
+html { 
+/*    width: 180px;*/
+}
+
+body {
+    font: 80% "Trebuchet MS", sans-serif;
+    min-height: 10px;
+    min-width: 180px;
+    background-color: #F0F0F0;
+    margin: 0px;
+    padding: 0px;
+}
+
+#wrapper {
+    overflow:hidden;
+    margin: 1px;
+    padding: 4px;
+    border-style: solid;
+    border-color: #D1D1D1;
+    border-width: 1px;
+    background-color: #FFFFFF;
+    border-radius: 10px 10px;
+}
+
+.title {
+    font: 130% "Trebuchet MS", sans-serif;
+    color: #000;
+    font-weight: bold;
+    text-align: left;
+    border-style: solid;
+    border-color: #D1D1D1;
+    border-width: 0px;
+    border-bottom-width: 1px;
+    padding-left: 3px;
+}
+
+#profilesList {
+    padding: 8px 0px 2px 0px;
+}
+
+.session {
+    padding-left: 20px;
+    padding-right: 10px;
+    border-bottom-width: 1px;
+    border-bottom-style: dashed;
+    white-space:nowrap;
+}
+
+#options {
+    cursor: pointer;
+    position: fixed;
+    top: 6px;
+    right: 6px;
+}
+
+.lastSession {
+    border-width: 0px;
+}
+
+.session .unactive {
+    color: #000;
+}
+
+.session .active {
+    color: #00A3BD;
+    font-weight: bold;
+}
+
+.session .unactive:hover {
+    color: #8A8A8A;
+}
+
+.session .active:hover {
+    color: #26E1FF;
+    font-weight: bold;
+}
+
+.button {
+    cursor: pointer;
+    unselectable: on;
+}
+
+#loading {
+    display: none;
+    z-index: 1000;
+    position:absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    text-align:center;
+    background-color: #FFF;
+    opacity:.6;
+}
+
+#loading img {
+    z-index: 1001;
+    vertical-align: middle;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin:auto;
+}

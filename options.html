@@ -1,0 +1,140 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/options.css">
+
+        <script src="lib/jquery-2.0.3.min.js" type="text/javascript"></script>
+        <script src="lib/jquery-ui-1.10.3.custom.min.js" type="text/javascript"></script>
+        <script src="lib/date.format.js" type="text/javascript"></script>
+
+        <script src="js/data.js" type="text/javascript"></script>
+        <script src="js/tools.js" type="text/javascript"></script>
+         <script src="lib/calculateTimeDifference.js" type="text/javascript"></script>
+        <script src="js/options.js" type="text/javascript"></script>
+
+        <title>Swap My Cookies - Options</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div id="options" class="box" style="">
+                <div class="logo">
+                    <img src="img/16/tools.png" />
+                </div>
+                <div class="title">Options</div>
+                <div class="content">
+                    <div class="formLine">
+                        <input type="checkbox" id="integrateETC" class="button" />
+                        <label class="formLabel">Integrate with <a target="_blank" href="http://chrome.google.com/extensions/detail/fngmhnnpilhplaeedifhccceomclgfbg">Edit This Cookie</a>? You must have the extension installed!</label>
+                        <a title="Tell 'Edit This Cookie' to pause cookie protection and filtering when switching profile" class="helper">?</a>
+                    </div>
+                    <div class="formLine" >
+                        <input type="checkbox" id="showProfileNumber" class="button" />
+                        <label class="formLabel">Show the active profile number in the browser's icon </label>
+                        <a title="Just try, and see how the extension's icon changes" class="helper">?</a>
+                    </div>
+                    <div class="formLine" >
+                        <input type="checkbox" id="showProfileChooser" class="button" />
+                        <label class="formLabel">Choose which profile to use everytime the browser starts</label>
+                        <a title="When the browser starts you will be asked which profile you want to use" class="helper">?</a>
+                    </div>
+                    <div class="formLine" >
+                        <input type="checkbox" id="activateShortcuts" class="button" />
+                        <label class="formLabel">Activate keyboard shortcuts</label>
+                        <a title="[CTRL]+[NUMBER 1-9] : Profile number 1-9
+[CTRL]+[SHIFT]+[+] : Next profile
+[CTRL]+[SHIFT]+[-] : Previous profile" class="helper">?</a>
+                    </div>
+                    <div class="formLine">
+                        <img src="img/16/refresh.png" class="button" id="deleteAll" />
+                        <label class="formLabel">Refresh tabs after changing the profile?</label>
+                        <select name="refresh" id="refreshSettings">
+                            <option value="0">No</option>
+                            <option value="1">Yes, only current tab</option>
+                            <option value="2">Yes, all the tabs in current window</option>
+                            <option value="3">Yes, all the tabs in every window</option>
+                        </select>
+                    </div>
+                    <div class="formLine">
+                        <img src="img/16/delete.png" class="button" id="emptyAll" />
+                        <label class="formLabel">Delete cookies for all profiles</label>
+                        <a title="Deletes all the cookies, but doesn't delete the profiles which are left empty" class="helper">?</a>
+                    </div>
+                    <div class="formLine">
+                        <img src="img/16/repeat.png" class="button" id="resetProfiles" />
+                        <label class="formLabel">Restore default profiles</label>
+                        <a title="Deletes all the profiles. Only the current cookies are left" class="helper">?</a>
+                    </div>
+                </div>
+            </div>
+            <div id="profiles" class="box">
+                <div class="logo">
+                    <img src="img/16/users.png" />
+                </div>
+                <div class="title">Profiles</div>
+                <div class="hint">
+                    TIP: The profiles are sortable. Drag them around!
+                </div>
+                <div id="lastUsedTitle">
+                    Last Used
+                    <!--<a title="DD/MM | HH:MM" class="helper">?</a>-->
+                </div>
+                <div id="sortable" class="content" onselectstart="return false">
+                    <div class="formLine" id="0" style="display:none;">
+                        <input type="hidden" class="index" value="0">
+                        <div class="operations" id="profilesOperations">
+                            <img src="img/16/trash.png" title="Delete Profile" class="cmd_delete" />
+                            <img src="img/16/refresh.png" title="Delete Cookies" class="cmd_reset" />
+                            <img src="img/16/copy_page.png" title="Copy cookies to new Profile" class="cmd_copy" />
+                            <img src="img/16/edit.png" title="Rename" class="cmd_rename" />
+                        </div>
+                        <div class="unactive name">Example Profile</div>
+                        <div class="lastUsed">10/10/2010</div>
+                    </div>
+                </div>
+                <div id="sizeWarning" title="Swap My Cookies might not be able to save all your cookies!">Warning! You have too many cookies stored in memory! Consider deleting unused profiles!</div>
+                <div id="addProfile" class="button" onselectstart="return false">
+                    New
+                    <img src="img/16/add.png" />
+                </div>
+            </div>
+            <div id="backup" class="box">
+                <div class="logo">
+                    <img src="img/16/checkback.png" />
+                </div>
+                <div class="title">Undo Actions</div>
+                <div id="lastUsedTitle">
+                    Action Performed
+                    <!--<a title="DD/MM | HH:MM" class="helper">?</a>-->
+                </div>
+                <div id="" class="content" onselectstart="return false">
+                    <div class="formLine" id="0" style="display:none;">
+                        <input type="hidden" class="index" value="0">
+                        <div class="operations" id="backupOperations">
+                            <img src="img/16/undo.png" title="Undelete Cookies" class="cmd_undo" />
+                            <img src="img/16/delete.png" title="Remove this backup" height="13px" class="cmd_deleteBackup" />
+                        </div>
+                        <div class="unactive name">Example Profile</div>
+                        <div class="lastUsed">10/10/2010</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="footer" style="visibility:hidden;">
+            <div style="float:left; margin-top:6px;">
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+                    ">
+                    <input type="image" src="https://www.paypalobjects.com/WEBSCR-640-20110306-1/it_IT/IT/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - Il sistema di pagamento online più facile e sicuro!">
+                    <img alt="" border="0" src="https://www.paypalobjects.com/WEBSCR-640-20110306-1/it_IT/i/scr/pixel.gif" width="1" height="1">
+                </form>
+            </div>
+            <p style="float:left; margin-top:10px;">If you like this extension buy me a coffee :) </p>
+            <p style="float:right; margin-top:10px; margin-right: 10px; color:RED;font-weight: bold;">
+                <a href="http://chrome.google.com/extensions/detail/dffhipnliikkblkhpjapbecpmoilcama" target="_blank">
+                    <img src="img/icon_32x32.png" ALIGN=ABSMIDDLE style="margin-top:-5px;" />
+					Extension By FDev
+                </a> - GNU License
+            </p>
+        </div>
+    </body>
+</html>

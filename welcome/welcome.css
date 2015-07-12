@@ -1,0 +1,115 @@
+body {
+    background-color: #F0F0F0;
+    margin: 0px;
+    font-size: 15px;
+}
+
+#wrapper {
+    background-color: #f6f6f6;
+    background-color: #fff;
+    border-color: #d7d7d7;
+    border-style: solid;
+    border-width: 0px 1px 0px 1px;
+    width: 60%;
+    min-height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ext-title {
+    margin-left: 10px;
+    margin-bottom: 15px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-color: #54d5e0;
+}
+
+.ext-title img {
+    float:left;
+    margin-right: 10px;
+}
+
+#extra-extensions {
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 25px;
+    width: 92%;
+    background-color: #FFFFFF;
+    border-radius: 10px 10px;
+    #-webkit-box-shadow: 5px 5px 15px #D1D1D1;
+}
+
+.extension {    
+    background-color: #FFFFFF;   
+    padding: 5px 5px 5px 5px;
+    #border-style: solid;
+    #border-width: 1px;
+    #margin-bottom: 20px;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#ext {
+    #margin-top: -30px;
+    #padding-top: 15px;
+    width: 95%;
+    margin-bottom: 60px;
+    border-radius: 10px 10px;
+    #-webkit-box-shadow: 0px 10px 35px #D1D1D1;
+}
+
+.extra-head {
+    color: #000;
+    font-weight: bold;
+    font-size: larger;
+    float:left;
+    width: 40%;
+    padding-bottom: 3px;
+    #border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-color: #000;
+}
+
+.extra-resume {
+    clear: both;
+    padding-top: 10px;
+    padding-left: 20px;
+    #text-indent:1em;
+}
+
+.extra-resume img {
+    max-width: 100%;
+}
+
+.extra-resume ul {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 15px;
+}
+
+.extra-resume img {
+    margin-bottom: 15px;
+    border-radius: 20px 20px;
+    margin-right: 20px;
+}
+
+hr {
+    border-color:#54d5e0;
+    border-color:#fff;
+    margin: 10px;
+    border-width: 1px;
+    width: 50%;
+    border-style: ridge
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+#footer {
+    position: fixed;
+    width: 58%;
+    bottom: 0px;
+    text-align: right;
+}
