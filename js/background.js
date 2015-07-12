@@ -1,4 +1,19 @@
 var original_updateData = updateData;
+
+function abc(a){
+	a=a.tabId || a
+    chrome.tabs.get(a,function(tab){
+        parser.href=tab.url
+        var u=remove_sub_domain(parser.host)
+        var ls=localStorage['active for:' + u]
+        chrome.browserAction.setBadgeText({
+            text: (parseInt(( ls || '0' ).match(/[0-9]+/))+1).toString() 
+        });
+    })
+}
+chrome.tabs.onActivated.addListener(abc)
+chrome.tabs.onUpdated.addListener(abc)
+
 updateData = function() {
 	var shortcuts = activateShortcuts;
 	original_updateData();

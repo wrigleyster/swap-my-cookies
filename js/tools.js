@@ -17,6 +17,8 @@ chrome.cookies.set=(function(org,options){
         cookie2=parser.host
         cookie1=remove_sub_domain(cookie1)
         cookie2=remove_sub_domain(cookie2)
+        localStorage['active for:' + cookie1]=localStorage.data_activeSession
+
         if(cookie1==cookie2){
             org.call(this,options)            
         }
@@ -32,15 +34,22 @@ chrome.cookies.remove=(function(org,options){
             cookie2=parser.host
             cookie1=remove_sub_domain(cookie1)
             cookie2=remove_sub_domain(cookie2)
+
+            localStorage['active for:' + cookie1]=localStorage.data_activeSession
             if(cookie1==cookie2){
                 org.call(this,options)            
             }
         })
+    localStorage['active for:' + cookie1]=localStorage.data_activeSession
 }).bind(chrome.cookies,chrome.cookies.remove);
 
 chrome.cookies.getAll=(function(org,options,callback){
     chrome.tabs.getSelected(function(tab){
         options.url=tab.url
+        cookie1=parser.host
+        parser.href=options.url
+        cookie1=remove_sub_domain(cookie1)
+        localStorage['active for:' + cookie1]=localStorage.data_activeSession
         org.call(this,options,callback)
     })
     // org.call(this,options,callback)
@@ -49,7 +58,7 @@ chrome.cookies.getAll=(function(org,options,callback){
 function restoreSession(index, callback) {
     var newActive, oldActive;
     var cookiesToRestore;
-	
+
     if( index >= 0 && index < sessions.length ) {
         newActive = index;
         cookiesToRestore = sessions[index].cookies;
